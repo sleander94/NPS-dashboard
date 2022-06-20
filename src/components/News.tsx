@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import moment from 'moment';
 
 type NewsParams = { parkCode: string };
 
@@ -31,7 +32,9 @@ const News = () => {
           return (
             <div className="p-1" key={news.indexOf(story)}>
               <p className="text-lg font-semibold">{story.title}</p>
-              <p>{story.lastIndexedDate}</p>
+              <p className="italic">
+                {moment(story.lastIndexedDate).format('MMM Do YY')}
+              </p>
               <p>{story.abstract}</p>
               <a href={story.url}>Learn More</a>
             </div>
