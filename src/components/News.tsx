@@ -11,11 +11,11 @@ const News = () => {
     const getNews = async () => {
       try {
         const response = await fetch(
-          `https://developer.nps.gov/api/v1/newsreleases?parkCode=${parkCode}&api_key=GutNTqgBFaepYpX1aGjggwDBjLiKJk8PMDCUnXsf`
+          `https://developer.nps.gov/api/v1/newsreleases?limit=10parkCode=${parkCode}&api_key=GutNTqgBFaepYpX1aGjggwDBjLiKJk8PMDCUnXsf`
         );
         const data = await response.json();
         setNews(data.data);
-        console.log(data);
+        console.log(news);
       } catch (e) {
         console.error(e);
       }
@@ -23,8 +23,9 @@ const News = () => {
     getNews();
   }, []);
   return (
-    <div className="w-1/3 p-2 border border-black overflow-y-scroll h-3/6">
+    <div className="w-full max-w-[520px] h-3/8 max-h-[375px] p-2 border border-black overflow-y-scroll h-3/6">
       <h1 className="text-center text-2xl font-bold">News</h1>
+      {news.length === 0 && <p>There is no news to display.</p>}
       {news.length > 0 &&
         news.map((story) => {
           return (
@@ -32,7 +33,6 @@ const News = () => {
               <p className="text-lg font-semibold">{story.title}</p>
               <p>{story.lastIndexedDate}</p>
               <p>{story.abstract}</p>
-              <img src={story.image.url} alt={story.altText}></img>
               <a href={story.url}>Learn More</a>
             </div>
           );
