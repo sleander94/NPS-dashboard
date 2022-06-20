@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import HomePage from './components/HomePage';
 import Navbar from './components/Navbar';
 import ParkPage from './components/ParkPage';
@@ -28,9 +28,9 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App h-100vh">
       <Router>
-        <Navbar parksInfo={parksInfo} />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomePage parksInfo={parksInfo} />} />
