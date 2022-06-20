@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 type AlertsParams = { parkCode: string };
 
-const Alerts = () => {
+const Alerts = ({}) => {
   let { parkCode } = useParams<AlertsParams>();
   const [alerts, setAlerts] = useState<any[]>([]);
 
@@ -15,6 +15,7 @@ const Alerts = () => {
         );
         const data = await response.json();
         setAlerts(data.data);
+        console.log(alerts);
       } catch (e) {
         console.error(e);
       }
@@ -22,8 +23,9 @@ const Alerts = () => {
     getAlerts();
   }, []);
   return (
-    <div className="w-1/3 h-3/6 p-2 border border-black overflow-y-scroll">
+    <div className="Alerts w-full  max-w-[520px] h-3/8 max-h-[375px] p-2 border border-black overflow-y-scroll">
       <h1 className="text-center text-2xl font-bold">Alerts</h1>
+      {alerts.length === 0 && <p>There are no alerts to display.</p>}
       {alerts.length > 0 &&
         alerts.map((alert) => {
           return (
