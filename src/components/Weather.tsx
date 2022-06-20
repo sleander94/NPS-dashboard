@@ -65,7 +65,6 @@ const Weather = () => {
         );
         const data = await weatherResponse.json();
         setWeather(data);
-        console.log(weather);
       } catch (e) {
         console.error(e);
       }
@@ -76,36 +75,50 @@ const Weather = () => {
   }, [coords]);
 
   return (
-    <div className="w-full sm:w-2/3 h-3/6 p-2 border border-black rounded overflow-y-scroll">
-      <h1 className="text-center text-xl font-bold">Weather</h1>
-      <div className="grid">
-        <h2 className="font-bold">Current</h2>
-        <div>{weather.current.temp} °F</div>
-        <div>{weather.current.weather[0].icon}</div>
+    <div className="Weather w-full sm:w-2/3 max-w-[520px] h-3/8 max-h-[375px] p-2 grid justify-items-center border border-black rounded">
+      <h1 className="WeatherTitle text-center text-xl font-bold">
+        Current Weather
+      </h1>
+      <div className="Current w-full grid items-center justify-items-center">
+        <div className="CurrentTemp col-start-2 row-span-3 text-2xl xs:text-4xl">
+          {Math.round(weather.current.temp)} °F
+        </div>
         {weather.current.weather[0].icon.length > 2 && (
           <img
+            className="CurrentImg w-16 xs:w-24 h-auto col-start-1 row-start-1"
             src={require(`../images/weather-icons/${weather.current.weather[0].icon}.png`)}
             alt=""
           ></img>
         )}
-        <div>{weather.current.weather[0].description}</div>
-        <div>UV Index: {weather.current.uvi}</div>
-        <div>Humidity: {weather.current.humidity}%</div>
-        <div>Wind: {weather.current.wind_speed}mph</div>
+        <div className="CurrentDesc text-xs xs:text-base row-start-2">
+          {weather.current.weather[0].description}
+        </div>
+        <div className="CurrentMisc flex flex-col gap-2 col-start-3 row-span-2 text-xs xs:text-base">
+          <div className="CurrentUVI ">UV Index: {weather.current.uvi}</div>
+          <div className="CurrentHum">
+            Humidity: {weather.current.humidity}%
+          </div>
+          <div className="CurrentWind ">
+            Wind: {weather.current.wind_speed}mph
+          </div>
+        </div>
       </div>
-      <h2>Forecast</h2>
-      <div>
+      <h2 className="font-bold">Forecast</h2>
+      <div className="w-full flex gap-1 xs:gap-2 text-[9px] xs:text-xs justify-between items-center">
         {weather.daily.slice(1).map((day) => {
           return (
-            <div key={weather.daily.indexOf(day)}>
+            <div
+              className="flex flex-col items-center"
+              key={weather.daily.indexOf(day)}
+            >
               <div>{moment.unix(day.dt).format('dddd')}</div>
-              <div>{day.weather[0].icon}</div>
               <img
+                className="w-5 xs:w-8 h-auto"
                 src={require(`../images/weather-icons/${day.weather[0].icon}.png`)}
                 alt=""
               ></img>
-              <div>High: {day.temp.max}</div>
-              <div>Low: {day.temp.min}</div>
+              <div>H: {Math.round(day.temp.max)}°</div>
+              <div>L: {Math.round(day.temp.min)}°</div>
             </div>
           );
         })}
