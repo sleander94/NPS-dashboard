@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import moment from 'moment';
 
-const Weather = () => {
-  type WeatherParams = { parkCode: string };
-  let { parkCode } = useParams<WeatherParams>();
+type parkProps = {
+  park: {
+    fullName?: string;
+    states?: string;
+    url?: string;
+    latitude?: number;
+    longitude?: number;
+  };
+};
 
+const Weather = ({ park }: parkProps) => {
   const [weather, setWeather] = useState<{
     current: {
       temp: number;
@@ -36,29 +42,16 @@ const Weather = () => {
     ],
   });
 
-  const [coords, setCoords] = useState<Array<string>>([]);
+  const [coords, setCoords] = useState<Array<number>>([]);
 
   useEffect(() => {
-    const getParkCoords = async () => {
-      try {
-        const parkResponse = await fetch(
-          `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=GutNTqgBFaepYpX1aGjggwDBjLiKJk8PMDCUnXsf`
-        );
-        const parkData = await parkResponse.json();
-        const parkCoords = [
-          parkData.data[0].latitude,
-          parkData.data[0].longitude,
-        ];
-        setCoords(parkCoords);
-      } catch (e) {
-        console.error(e);
-      }
-    };
-    getParkCoords();
-  }, []);
+    if (park.latitude && park.longitude) {
+      setCoords([park.latitude, park.longitude]);
+    }
+  }, [park]);
 
   useEffect(() => {
-    const getWeather = async (coords: Array<string>) => {
+    const getWeather = async (coords: Array<number>) => {
       try {
         const weatherResponse = await fetch(
           `https://api.openweathermap.org/data/2.5/onecall?lat=${coords[0]}&lon=${coords[1]}&units=imperial&appid=fc2664640b253835a31390753e5fc42f`
