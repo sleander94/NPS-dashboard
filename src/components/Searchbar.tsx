@@ -1,36 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-type SearchbarProps = { parksInfo: Array<any> };
+type SearchbarProps = {
+  parksInfo: Array<any>;
+};
 
 const Searchbar = ({ parksInfo }: SearchbarProps) => {
   const [searchVal, setSearchVal] = useState('');
-  const [showParks, setShowParks] = useState(false);
+  const [searchCode, setSearchCode] = useState('');
 
-  const search = (val: string) => {};
+  useEffect(() => {
+    parksInfo.forEach((park) => {
+      if (park.name.toLocaleLowerCase() === searchVal.toLocaleLowerCase()) {
+        setSearchCode(park.parkCode);
+      }
+    });
+  }, [searchVal]);
 
-  const autofillSearch = (park: { name: string }) => {
-    setShowParks(false);
-    setSearchVal(park.name);
+  const showSearch = () => {
+    const suggs = document.getElementById('searchSuggs');
+    if (suggs !== null) {
+      suggs.classList.add('visible');
+      suggs.classList.remove('hidden');
+    }
+  };
+
+  const navigate = useNavigate();
+
+  const trySearch = () => {
+    parksInfo.forEach((park) => {
+      if (searchCode === park.parkCode) {
+        navigate(`/parks/${searchCode}`);
+      }
+    });
   };
 
   return (
-    <div>
-      <input
-        id="searchInput"
-        type="text"
-        className="border border-black m-4"
-        value={searchVal}
-        onChange={(e) => setSearchVal(e.target.value)}
-        onFocus={() => setShowParks(true)}
-      ></input>
-      <button
-        className="border border-black m-4"
-        onClick={() => search(searchVal)}
+    <form
+      className="Searchbar grid justify-items-center items-center"
+      onClick={() => showSearch()}
+    >
+      <div className="SearchBox w-full h-[4.5rem] grid p-3 rounded bg-neutral-200/40">
+        <input
+          type="text"
+          className="SearchInput w-full p-1 border-r-0 rounded rounded-br-none rounded-tr-none focus:outline-none"
+          value={searchVal}
+          placeholder="Enter a park name"
+          onChange={(e) => setSearchVal(e.target.value)}
+          onClick={() => showSearch()}
+        ></input>
+        <button
+          type="button"
+          className="SearchButton w-full min-w-[80px] p-1 flex justify-center items-center col-start-2 col-end-3 border-l-0 rounded rounded-bl-none rounded-tl-none bg-lime-600 hover:bg-lime-500 text-white text-center text-xl"
+          onClick={() => trySearch()}
+        >
+          <div>Search</div>
+        </button>
+      </div>
+      <div
+        id="searchSuggs"
+        className="SearchSuggestions w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid"
       >
-        Search
-      </button>
-      {showParks &&
-        parksInfo
+        {parksInfo
           .filter((park) => {
             if (searchVal === '') {
               return;
@@ -44,15 +75,17 @@ const Searchbar = ({ parksInfo }: SearchbarProps) => {
           })
           .map((park) => {
             return (
-              <div
+              <Link
+                className="Suggestion p-1 hover:bg-lime-500"
+                to={`/parks/${park.parkCode}`}
                 key={parksInfo.indexOf(park)}
-                onClick={() => autofillSearch(park)}
               >
                 {park.name}
-              </div>
+              </Link>
             );
           })}
-    </div>
+      </div>
+    </form>
   );
 };
 
