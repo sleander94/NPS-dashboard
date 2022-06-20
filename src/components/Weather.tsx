@@ -13,7 +13,7 @@ const Weather = () => {
       uvi: number;
       wind_speed: number;
       sunrise: number;
-      weather: [{ description: string }];
+      weather: [{ description: string; icon: string }];
     };
     daily: [
       {
@@ -29,7 +29,7 @@ const Weather = () => {
       uvi: 0,
       wind_speed: 0,
       sunrise: 0,
-      weather: [{ description: '' }],
+      weather: [{ description: '', icon: '' }],
     },
     daily: [
       { dt: 0, temp: { min: 0, max: 0 }, weather: [{ main: '', icon: '' }] },
@@ -76,14 +76,23 @@ const Weather = () => {
   }, [coords]);
 
   return (
-    <div className="w-1/3 h-3/6 p-2 border border-black overflow-y-scroll">
-      <h1 className="text-center text-2xl font-bold">Weather</h1>
-      <h2>Current</h2>
-      <div>{weather.current.temp} °F</div>
-      <div>{weather.current.weather[0].description}</div>
-      <div>UV Index: {weather.current.uvi}</div>
-      <div>Humidity: {weather.current.humidity}%</div>
-      <div>Wind: {weather.current.wind_speed}mph</div>
+    <div className="w-full sm:w-2/3 h-3/6 p-2 border border-black rounded overflow-y-scroll">
+      <h1 className="text-center text-xl font-bold">Weather</h1>
+      <div className="grid">
+        <h2 className="font-bold">Current</h2>
+        <div>{weather.current.temp} °F</div>
+        <div>{weather.current.weather[0].icon}</div>
+        {weather.current.weather[0].icon.length > 2 && (
+          <img
+            src={require(`../images/weather-icons/${weather.current.weather[0].icon}.png`)}
+            alt=""
+          ></img>
+        )}
+        <div>{weather.current.weather[0].description}</div>
+        <div>UV Index: {weather.current.uvi}</div>
+        <div>Humidity: {weather.current.humidity}%</div>
+        <div>Wind: {weather.current.wind_speed}mph</div>
+      </div>
       <h2>Forecast</h2>
       <div>
         {weather.daily.slice(1).map((day) => {
@@ -91,6 +100,10 @@ const Weather = () => {
             <div key={weather.daily.indexOf(day)}>
               <div>{moment.unix(day.dt).format('dddd')}</div>
               <div>{day.weather[0].icon}</div>
+              <img
+                src={require(`../images/weather-icons/${day.weather[0].icon}.png`)}
+                alt=""
+              ></img>
               <div>High: {day.temp.max}</div>
               <div>Low: {day.temp.min}</div>
             </div>
