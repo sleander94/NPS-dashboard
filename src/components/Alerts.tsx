@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import moment from 'moment';
 
 type AlertsParams = { parkCode: string };
 
@@ -31,7 +32,9 @@ const Alerts = ({}) => {
           return (
             <div className="p-1" key={alerts.indexOf(alert)}>
               <p className="text-lg font-semibold">{alert.title}</p>
-              <p>{alert.lastIndexedDate}</p>
+              <p className="italic">
+                {moment(alert.lastIndexedDate).format('MMM Do YY')}
+              </p>
               <p>{alert.description}</p>
             </div>
           );
