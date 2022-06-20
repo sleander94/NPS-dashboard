@@ -75,7 +75,7 @@ const Weather = () => {
   }, [coords]);
 
   return (
-    <div className="Weather w-full sm:w-2/3 max-w-[520px] h-3/8 max-h-[375px] p-2 grid justify-items-center border border-black rounded">
+    <div className="Weather w-full max-w-[520px] h-3/8 max-h-[375px] p-2 grid justify-items-center border border-black rounded">
       <h1 className="WeatherTitle text-center text-xl font-bold">
         Current Weather
       </h1>
