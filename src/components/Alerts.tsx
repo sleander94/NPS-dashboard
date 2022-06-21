@@ -16,7 +16,6 @@ const Alerts = ({}) => {
         );
         const data = await response.json();
         setAlerts(data.data);
-        console.log(alerts);
       } catch (e) {
         console.error(e);
       }
@@ -24,8 +23,13 @@ const Alerts = ({}) => {
     getAlerts();
   }, []);
   return (
-    <div className="Alerts w-full  max-w-[520px] h-3/8 max-h-[375px] p-2 border border-black overflow-y-scroll">
-      <h1 className="text-center text-2xl font-bold">Alerts</h1>
+    <div
+      id="alerts"
+      className="Alerts w-full  max-w-[520px] h-3/8 max-h-[375px] border border-black rounded overflow-y-scroll"
+    >
+      <h1 className="text-center text-2xl font-bold bg-lime-600 text-white">
+        Alerts
+      </h1>
       {alerts.length === 0 && <p>There are no alerts to display.</p>}
       {alerts.length > 0 &&
         alerts.map((alert) => {
@@ -35,7 +39,7 @@ const Alerts = ({}) => {
               <p className="italic">
                 {moment(alert.lastIndexedDate).format('MMM Do YY')}
               </p>
-              <p>{alert.description}</p>
+              <p className="border-b border-gray-400">{alert.description}</p>
             </div>
           );
         })}

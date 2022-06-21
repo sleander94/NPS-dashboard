@@ -23,7 +23,10 @@ const Camping = ({}) => {
     getCampingInfo();
   }, []);
   return (
-    <div className="Camping w-full  max-w-[520px] h-3/8 max-h-[375px] border border-black rounded overflow-y-scroll">
+    <div
+      id="campgrounds"
+      className="Camping w-full  max-w-[520px] h-3/8 max-h-[375px] border border-black rounded overflow-y-scroll"
+    >
       <h1 className="text-center text-2xl font-bold bg-lime-600 text-white">
         Campgrounds
       </h1>

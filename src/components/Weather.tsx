@@ -68,7 +68,10 @@ const Weather = ({ park }: parkProps) => {
   }, [coords]);
 
   return (
-    <div className="Weather w-full max-w-[520px] h-3/8 max-h-[375px] p-2 grid justify-items-center border border-black rounded">
+    <div
+      id="weather"
+      className="Weather w-full max-w-[520px] h-3/8 max-h-[375px] p-2 grid justify-items-center border border-black rounded"
+    >
       <h1 className="WeatherTitle text-center text-xl font-bold">
         Current Weather
       </h1>
@@ -96,7 +99,7 @@ const Weather = ({ park }: parkProps) => {
           </div>
         </div>
       </div>
-      <h2 className="font-bold">Forecast</h2>
+      <h1 className="WeatherTitle text-center text-xl font-bold">Forecast</h1>
       <div className="w-full flex gap-1 xs:gap-2 text-[9px] xs:text-xs justify-between items-center">
         {weather.daily.slice(1).map((day) => {
           return (
