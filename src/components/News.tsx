@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 
@@ -16,7 +16,6 @@ const News = () => {
         );
         const data = await response.json();
         setNews(data.data);
-        console.log(news);
       } catch (e) {
         console.error(e);
       }
@@ -24,7 +23,10 @@ const News = () => {
     getNews();
   }, []);
   return (
-    <div className="w-full max-w-[520px] h-3/8 max-h-[375px] p-2 border border-black overflow-y-scroll h-3/6">
+    <div
+      id="news"
+      className="w-full max-w-[520px] h-3/8 max-h-[375px] p-2 border border-black rounded overflow-y-scroll h-3/6"
+    >
       <h1 className="text-center text-2xl font-bold">News</h1>
       {news.length === 0 && <p>There is no news to display.</p>}
       {news.length > 0 &&
