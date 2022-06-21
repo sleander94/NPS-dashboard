@@ -51,7 +51,7 @@ const Searchbar = ({ parksInfo }: SearchbarProps) => {
         ></input>
         <button
           type="button"
-          className="SearchButton w-full min-w-[80px] p-1 flex justify-center items-center col-start-2 col-end-3 border-l-0 rounded rounded-bl-none rounded-tl-none bg-lime-600 hover:bg-lime-500 text-white text-center text-xl"
+          className="SearchButton w-full min-w-[60px]  p-1 flex justify-center items-center col-start-2 col-end-3 border-l-0 rounded rounded-bl-none rounded-tl-none bg-lime-600 hover:bg-lime-500 text-white text-center text-xl"
           onClick={() => trySearch()}
         >
           <div>Search</div>
