@@ -33,11 +33,26 @@ const Camping = ({}) => {
           return (
             <div className="p-1" key={campingInfo.indexOf(campground)}>
               <p className="text-lg font-semibold">{campground.name}</p>
+              {campground.images.length > 0 && (
+                <img src={campground.images[0].url}></img>
+              )}
               <p className="">{campground.description}</p>
               <p className="italic">{campground.directionsOverview}</p>
-              <a href={campground.reservationUrl} target="_blank" className="">
-                Reservation Information
-              </a>
+              {campground.reservationUrl && (
+                <a
+                  href={campground.reservationUrl}
+                  target="_blank"
+                  className=""
+                >
+                  Reservation Information
+                </a>
+              )}
+              {!campground.reservationUrl && (
+                <a href={campground.url} target="_blank" className="">
+                  Reservation Information
+                </a>
+              )}
+              <p className="border-b border-gray-400"></p>
             </div>
           );
         })}
