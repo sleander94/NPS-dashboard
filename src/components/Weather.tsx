@@ -35,7 +35,7 @@ const Weather = ({ park }: parkProps) => {
       uvi: 0,
       wind_speed: 0,
       sunrise: 0,
-      weather: [{ description: '', icon: '' }],
+      weather: [{ description: 'loading desc.', icon: '' }],
     },
     daily: [
       { dt: 0, temp: { min: 0, max: 0 }, weather: [{ main: '', icon: '' }] },
@@ -67,6 +67,15 @@ const Weather = ({ park }: parkProps) => {
     }
   }, [coords]);
 
+  const toTitleCase = (description: string) => {
+    const array = description.split(' ');
+    return array
+      .map((word) => {
+        return word[0].toLocaleUpperCase() + word.slice(1);
+      })
+      .join(' ');
+  };
+
   return (
     <div
       id="weather"
@@ -87,7 +96,7 @@ const Weather = ({ park }: parkProps) => {
           ></img>
         )}
         <div className="CurrentDesc text-xs xs:text-base row-start-2">
-          {weather.current.weather[0].description}
+          {toTitleCase(weather.current.weather[0].description)}
         </div>
         <div className="CurrentMisc flex flex-col gap-2 col-start-3 row-span-2 text-xs xs:text-base">
           <div className="CurrentUVI ">UV Index: {weather.current.uvi}</div>
