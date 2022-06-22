@@ -1,6 +1,3 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-
 type parkProps = {
   park: {
     fullName?: string;
