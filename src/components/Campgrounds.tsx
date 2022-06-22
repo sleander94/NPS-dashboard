@@ -25,37 +25,48 @@ const Camping = ({}) => {
   return (
     <div
       id="campgrounds"
-      className="Camping w-full  max-w-[520px] h-3/8 max-h-[375px] border border-black rounded overflow-y-scroll"
+      className="Camping w-full  max-w-[520px] border border-black border-b-none rounded bg-white"
     >
-      <h1 className="text-center text-2xl font-bold bg-lime-600 text-white">
+      <h1 className="text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Campgrounds
       </h1>
-      {campingInfo.length === 0 && <p>There are no campgrounds to display.</p>}
+      {campingInfo.length === 0 && (
+        <p className="border-b border-black">
+          There are no campgrounds to display.
+        </p>
+      )}
       {campingInfo.length > 0 &&
         campingInfo.map((campground) => {
           return (
-            <div className="p-1" key={campingInfo.indexOf(campground)}>
-              <p className="text-lg font-semibold">{campground.name}</p>
+            <div
+              className="p-1 border-b border-black"
+              key={campingInfo.indexOf(campground)}
+            >
+              <h2 className="text-lg font-semibold">{campground.name}</h2>
               {campground.images.length > 0 && (
                 <img src={campground.images[0].url}></img>
               )}
-              <p className="">{campground.description}</p>
-              <p className="italic">{campground.directionsOverview}</p>
+              <p className="pb-2">{campground.description}</p>
+              <h3 className="font-semibold">Directions</h3>
+              <p className="">{campground.directionsOverview}</p>
               {campground.reservationUrl && (
                 <a
+                  className="rounded pl-1 pr-1 border-2 border-[#97c64b] font-semibold"
                   href={campground.reservationUrl}
                   target="_blank"
-                  className=""
                 >
                   Reservation Information
                 </a>
               )}
               {!campground.reservationUrl && (
-                <a href={campground.url} target="_blank" className="">
+                <a
+                  className="rounded pl-1 pr-1 border-2 border-[#97c64b]"
+                  href={campground.url}
+                  target="_blank"
+                >
                   Reservation Information
                 </a>
               )}
-              <p className="border-b border-gray-400"></p>
             </div>
           );
         })}

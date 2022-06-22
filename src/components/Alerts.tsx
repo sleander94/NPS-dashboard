@@ -25,21 +25,26 @@ const Alerts = ({}) => {
   return (
     <div
       id="alerts"
-      className="Alerts w-full  max-w-[520px] h-3/8 max-h-[375px] border border-black rounded overflow-y-scroll"
+      className="Alerts w-full  max-w-[520px] border border-black border-b-0 rounded bg-white"
     >
-      <h1 className="text-center text-2xl font-bold bg-lime-600 text-white">
+      <h1 className="text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Alerts
       </h1>
-      {alerts.length === 0 && <p>There are no alerts to display.</p>}
+      {alerts.length === 0 && (
+        <p className="border-b border-black">There are no alerts to display.</p>
+      )}
       {alerts.length > 0 &&
         alerts.map((alert) => {
           return (
-            <div className="p-1" key={alerts.indexOf(alert)}>
+            <div
+              className="p-1 border-b border-black"
+              key={alerts.indexOf(alert)}
+            >
               <p className="text-lg font-semibold">{alert.title}</p>
-              <p className="italic">
+              <p className="italic text-sm">
                 {moment(alert.lastIndexedDate).format('MMM Do YY')}
               </p>
-              <p className="border-b border-gray-400">{alert.description}</p>
+              <p className="">{alert.description}</p>
             </div>
           );
         })}

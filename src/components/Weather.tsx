@@ -70,12 +70,12 @@ const Weather = ({ park }: parkProps) => {
   return (
     <div
       id="weather"
-      className="Weather w-full max-w-[520px] h-3/8 max-h-[375px] p-2 grid justify-items-center border border-black rounded"
+      className="Weather w-full max-w-[520px] h-3/8 max-h-[375px] border border-black rounded bg-white"
     >
-      <h1 className="WeatherTitle text-center text-xl font-bold">
+      <h1 className="WeatherTitle justify-self-stretch text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Current Weather
       </h1>
-      <div className="Current w-full grid items-center justify-items-center">
+      <div className="Current w-full p-2 grid items-center justify-items-center">
         <div className="CurrentTemp col-start-2 row-span-3 text-2xl xs:text-4xl">
           {Math.round(weather.current.temp)} °F
         </div>
@@ -99,8 +99,10 @@ const Weather = ({ park }: parkProps) => {
           </div>
         </div>
       </div>
-      <h1 className="WeatherTitle text-center text-xl font-bold">Forecast</h1>
-      <div className="w-full flex gap-1 xs:gap-2 text-[9px] xs:text-xs justify-between items-center">
+      <h1 className="WeatherTitle pb-3 text-center text-xl font-bold">
+        Forecast
+      </h1>
+      <div className="w-full pl-1 pr-1 flex gap-1 xs:gap-2 text-[9px] xs:text-xs justify-between items-center">
         {weather.daily.slice(1).map((day) => {
           return (
             <div

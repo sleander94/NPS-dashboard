@@ -25,20 +25,33 @@ const News = () => {
   return (
     <div
       id="news"
-      className="w-full max-w-[520px] h-3/8 max-h-[375px] p-2 border border-black rounded overflow-y-scroll h-3/6"
+      className="w-full max-w-[520px] border border-black border-b-0 rounded bg-white rounded"
     >
-      <h1 className="text-center text-2xl font-bold">News</h1>
-      {news.length === 0 && <p>There is no news to display.</p>}
+      <h1 className="text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
+        News
+      </h1>
+      {news.length === 0 && (
+        <p className="border-b border-black">There is no news to display.</p>
+      )}
       {news.length > 0 &&
         news.map((story) => {
           return (
-            <div className="p-1" key={news.indexOf(story)}>
+            <div
+              className="p-1 border-b border-black"
+              key={news.indexOf(story)}
+            >
               <p className="text-lg font-semibold">{story.title}</p>
-              <p className="italic">
+              <p className="italic text-sm">
                 {moment(story.lastIndexedDate).format('MMM Do YY')}
               </p>
+              <img src={story.image.url} alt={story.image.altText}></img>
               <p>{story.abstract}</p>
-              <a href={story.url}>Learn More</a>
+              <a
+                className="rounded pl-1 pr-1 border-2 border-[#97c64b] font-semibold"
+                href={story.url}
+              >
+                Learn More
+              </a>
             </div>
           );
         })}
