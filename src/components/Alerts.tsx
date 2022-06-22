@@ -25,7 +25,7 @@ const Alerts = ({}) => {
   return (
     <div
       id="alerts"
-      className="Alerts w-full  max-w-[520px] border border-black border-b-0 rounded bg-white"
+      className="Alerts w-full col-start-1 lg:h-[42vh] lg:overflow-y-scroll lg:max-w-[640px] border border-black border-b-0 rounded bg-white"
     >
       <h1 className="text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Alerts

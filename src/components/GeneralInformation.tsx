@@ -14,16 +14,16 @@ type parkProps = {
 
 const GeneralInformation = ({ park }: parkProps) => {
   return (
-    <div className="GeneralInfo w-full  max-w-[520px] border border-black rounded bg-white">
+    <div className="GeneralInfo lg:max-w-[640px] grid w-full col-start-2 row-span-2 border border-black rounded bg-white">
       {park.images && (
         <img
-          className="rounded-tr-[.19rem] rounded-tl-[.19rem]"
+          className="w-full justify-self-center rounded-tr-[.19rem] rounded-tl-[.19rem]"
           src={park.images[0].url}
           alt={park.images[0].altText}
         ></img>
       )}
       <p className="p-1">{park.description}</p>
-      <div className="p-2 pb-4 flex justify-around">
+      <div className="p-2 pb-4 flex justify-around items-center">
         <a
           className="rounded pl-1 pr-1 border-2 border-[#97c64b] font-semibold"
           href={park.url}

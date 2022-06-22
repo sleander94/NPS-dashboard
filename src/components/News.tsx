@@ -25,7 +25,7 @@ const News = () => {
   return (
     <div
       id="news"
-      className="w-full max-w-[520px] border border-black border-b-0 rounded bg-white rounded"
+      className="lg:col-start-3 lg:row-start-1 lg:h-[42vh] lg:overflow-y-scroll w-full lg:max-w-[640px] border border-black border-b-0 rounded bg-white rounded"
     >
       <h1 className="text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         News

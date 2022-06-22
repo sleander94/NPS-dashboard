@@ -24,7 +24,7 @@ const Camping = ({}) => {
   return (
     <div
       id="campgrounds"
-      className="Camping w-full  max-w-[520px] border border-black border-b-none rounded bg-white"
+      className="Camping lg:max-w-[640px] lg:col-start-3 lg:h-[42vh] lg:overflow-y-scroll w-full border border-black border-b-0 rounded bg-white"
     >
       <h1 className="text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Campgrounds
