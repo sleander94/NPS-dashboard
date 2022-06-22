@@ -50,7 +50,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
   };
 
   return (
-    <form className="Searchbar grid justify-items-center items-center">
+    <form className="Searchbar relative grid justify-items-center items-center">
       <div className="SearchBox w-full h-[3rem] grid p-3 rounded bg-neutral-200/40">
         <input
           type="text"
@@ -70,7 +70,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
       </div>
       <div
         id="searchSuggs"
-        className="SearchSuggestions w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
+        className="SearchSuggestions absolute top-[50px] z-10 w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
       >
         {parksInfo
           .filter((park) => {
