@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ParkPageSearchbar from './ParkSearchbar';
 import ParkNav from './ParkNav';
 import Weather from './Weather';
 import GeneralInformation from './GeneralInformation';
@@ -9,7 +10,11 @@ import Camping from './Campgrounds';
 
 type ParkPageParams = { parkCode: string };
 
-const ParkPage = () => {
+type parksInfoProp = {
+  parksInfo: Array<any>;
+};
+
+const ParkPage = ({ parksInfo }: parksInfoProp) => {
   let { parkCode } = useParams<ParkPageParams>();
   const [park, setPark] = useState<{
     fullName?: string;
@@ -30,10 +35,11 @@ const ParkPage = () => {
       }
     };
     getPark();
-  }, []);
+  }, [parkCode]);
 
   return (
     <div className="">
+      <ParkPageSearchbar parksInfo={parksInfo} />
       <ParkNav park={park} />
       <div className="w-full gap-2 flex flex-wrap justify-center bg-neutral-200/75 p-2">
         <GeneralInformation park={park} />
