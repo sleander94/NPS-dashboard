@@ -20,7 +20,7 @@ const Camping = ({}) => {
       }
     };
     getCampingInfo();
-  }, []);
+  }, [parkCode]);
   return (
     <div
       id="campgrounds"

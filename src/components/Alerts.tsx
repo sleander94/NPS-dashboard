@@ -21,7 +21,7 @@ const Alerts = ({}) => {
       }
     };
     getAlerts();
-  }, []);
+  }, [parkCode]);
   return (
     <div
       id="alerts"

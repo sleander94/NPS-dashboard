@@ -21,7 +21,7 @@ const News = () => {
       }
     };
     getNews();
-  }, []);
+  }, [parkCode]);
   return (
     <div
       id="news"
