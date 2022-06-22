@@ -62,7 +62,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
         ></input>
         <button
           type="button"
-          className="SearchButton w-full min-w-[60px] p-1 flex justify-center items-center col-start-2 col-end-3 border-l-0 rounded rounded-bl-none rounded-tl-none bg-[#97c64b] hover:bg-lime-500 text-white text-center text-xl"
+          className="SearchButton w-full min-w-[60px] p-1 flex justify-center items-center col-start-2 col-end-3 border-l-0 rounded rounded-bl-none rounded-tl-none bg-[#97c64b] hover:bg-[#7fa83e] text-center text-xl"
           onClick={() => trySearch()}
         >
           <div>Search</div>
@@ -87,7 +87,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
           .map((park) => {
             return (
               <Link
-                className="Suggestion p-1 hover:bg-lime-500"
+                className="Suggestion p-1 hover:bg-[#97c64b]"
                 to={`/parks/${park.parkCode}`}
                 onClick={() => updateSearchAndHide(park.name)}
                 key={parksInfo.indexOf(park)}
