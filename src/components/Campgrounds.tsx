@@ -15,7 +15,6 @@ const Camping = ({}) => {
         );
         const data = await response.json();
         setCampingInfo(data.data);
-        console.log(campingInfo);
       } catch (e) {
         console.error(e);
       }
