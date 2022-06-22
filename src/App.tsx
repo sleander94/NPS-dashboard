@@ -16,7 +16,7 @@ const App = () => {
     const getParksInfo = async () => {
       try {
         const response = await fetch(
-          `https://developer.nps.gov/api/v1/parks?limit=999&api_key=GutNTqgBFaepYpX1aGjggwDBjLiKJk8PMDCUnXsf`
+          `https://developer.nps.gov/api/v1/parks?limit=499&api_key=GutNTqgBFaepYpX1aGjggwDBjLiKJk8PMDCUnXsf`
         );
         const data = await response.json();
         setParksInfo(data.data);
@@ -34,7 +34,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomePage parksInfo={parksInfo} />} />
-          <Route path={`/parks/:parkCode`} element={<ParkPage />}></Route>
+          <Route
+            path={`/parks/:parkCode`}
+            element={<ParkPage parksInfo={parksInfo} />}
+          ></Route>
         </Routes>
       </Router>
     </div>
