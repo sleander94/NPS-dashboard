@@ -1,18 +1,21 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ParkNav from './ParkNav';
 import Weather from './Weather';
+import GeneralInformation from './GeneralInformation';
 import Alerts from './Alerts';
 import News from './News';
+import Camping from './Campgrounds';
 
 type ParkPageParams = { parkCode: string };
 
 const ParkPage = () => {
   let { parkCode } = useParams<ParkPageParams>();
   const [park, setPark] = useState<{
-    fullName: string;
-    states: string;
-    url: string;
-  }>({ fullName: '', states: '', url: '' });
+    fullName?: string;
+    states?: string;
+    url?: string;
+  }>({});
 
   useEffect(() => {
     const getPark = async () => {
@@ -30,14 +33,15 @@ const ParkPage = () => {
   }, []);
 
   return (
-    <div className="flex h-screen">
-      <h2>{park.fullName}</h2>
-      <a href={park.url} target="_blank">
-        Go to NPS site
-      </a>
-      <Weather />
-      <Alerts />
-      <News />
+    <div className="">
+      <ParkNav park={park} />
+      <div className="w-full gap-2 flex flex-wrap justify-center bg-neutral-200/75 p-2">
+        <GeneralInformation park={park} />
+        <Weather park={park} />
+        <Alerts />
+        <News />
+        <Camping />
+      </div>
     </div>
   );
 };
