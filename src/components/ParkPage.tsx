@@ -38,10 +38,12 @@ const ParkPage = ({ parksInfo }: parksInfoProp) => {
   }, [parkCode]);
 
   return (
-    <div className="">
-      <ParkPageSearchbar parksInfo={parksInfo} />
+    <div className="grid">
+      <div className="justify-self-center w-full lg:w-2/3 max-w-[800px]">
+        <ParkPageSearchbar parksInfo={parksInfo} />
+      </div>
       <ParkNav park={park} />
-      <div className="w-full gap-2 flex flex-wrap justify-center bg-neutral-200/75 p-2">
+      <div className="lg:h-[80vh] lg:grid lg:grid-cols-3 lg:justify-items-center w-full gap-2 flex flex-wrap justify-center bg-neutral-200/75 p-2">
         <GeneralInformation park={park} />
         <Weather park={park} />
         <Alerts />
