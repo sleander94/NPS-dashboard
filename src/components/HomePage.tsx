@@ -1,10 +1,10 @@
 import Searchbar from './Searchbar';
 
-type HomePageParams = {
+type ParksInfo = {
   parksInfo: Array<any>;
 };
 
-const HomePage = ({ parksInfo }: HomePageParams) => {
+const HomePage = ({ parksInfo }: ParksInfo) => {
   const hideSearch = () => {
     const suggs = document.getElementById('searchSuggs');
     if (suggs !== null) {
