@@ -51,10 +51,10 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
 
   return (
     <form className="Searchbar relative grid justify-items-center items-center">
-      <div className="SearchBox w-full h-[3rem] grid p-3 rounded bg-neutral-200/40">
+      <div className="SearchBox w-full grid rounded border-black border">
         <input
           type="text"
-          className="SearchInput w-full p-1 border-r-0 rounded rounded-br-none rounded-tr-none focus:outline-none"
+          className="SearchInput w-full p-1 border-r border-black rounded rounded-tr-none rounded-br-none rounded-bl-[.19rem] rounded-tl-[.19rem] focus:outline-none"
           value={searchVal}
           placeholder="Search for another park"
           onChange={(e) => setSearchVal(e.target.value)}
@@ -62,7 +62,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
         ></input>
         <button
           type="button"
-          className="SearchButton w-full min-w-[60px] p-1 flex justify-center items-center col-start-2 col-end-3 border-l-0 rounded rounded-bl-none rounded-tl-none bg-[#97c64b] hover:bg-[#7fa83e] text-center text-xl"
+          className="SearchButton w-full min-w-[60px] p-1 flex justify-center items-center col-start-2 col-end-3 border-l-0 rounded rounded-tl-none rounded-bl-none rounded-tr-[.19rem] rounded-br-[.19rem] bg-[#97c64b] hover:bg-[#7fa83e] text-center text-xl"
           onClick={() => trySearch()}
         >
           <div>Search</div>
@@ -70,7 +70,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
       </div>
       <div
         id="searchSuggs"
-        className="SearchSuggestions absolute top-[50px] z-10 w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
+        className="SearchSuggestions border border-t-0 border-black absolute top-[38px] z-10 w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
       >
         {parksInfo
           .filter((park) => {
