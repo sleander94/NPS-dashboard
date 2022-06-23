@@ -25,7 +25,7 @@ const Alerts = ({}) => {
   return (
     <div
       id="alerts"
-      className="Alerts w-full col-start-1 lg:h-[42vh] lg:overflow-y-scroll lg:max-w-[640px] border border-black border-b-0 rounded bg-white"
+      className="Alerts w-full col-start-1 lg:h-full lg:overflow-y-scroll lg:max-w-[640px] border border-black border-b-0 lg:border-b rounded bg-white"
     >
       <h1 className="text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Alerts
@@ -37,14 +37,15 @@ const Alerts = ({}) => {
         alerts.map((alert) => {
           return (
             <div
-              className="p-1 border-b border-black"
+              className="lg:border-none p-1 border-b border-black"
               key={alerts.indexOf(alert)}
             >
               <p className="text-lg font-semibold">{alert.title}</p>
               <p className="italic text-sm">
                 {moment(alert.lastIndexedDate).format('MMM Do YY')}
               </p>
-              <p className="">{alert.description}</p>
+              <p>{alert.description}</p>
+              <div className="lg:border-b lg:border-gray-400 lg:pt-2"></div>
             </div>
           );
         })}

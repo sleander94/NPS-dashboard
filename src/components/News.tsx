@@ -25,7 +25,7 @@ const News = () => {
   return (
     <div
       id="news"
-      className="lg:col-start-3 lg:row-start-1 lg:h-[42vh] lg:overflow-y-scroll w-full lg:max-w-[640px] border border-black border-b-0 rounded bg-white rounded"
+      className="lg:col-start-3 lg:row-start-1 lg:h-full lg:overflow-y-scroll w-full lg:max-w-[640px] border border-black border-b-0 lg:border-b rounded bg-white rounded"
     >
       <h1 className="text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         News
@@ -37,7 +37,7 @@ const News = () => {
         news.map((story) => {
           return (
             <div
-              className="p-1 border-b border-black"
+              className="lg:border-none p-1 border-b border-black"
               key={news.indexOf(story)}
             >
               <p className="text-lg font-semibold">{story.title}</p>
@@ -52,6 +52,7 @@ const News = () => {
               >
                 Learn More
               </a>
+              <div className="lg:border-b lg:border-gray-400 lg:pt-2"></div>
             </div>
           );
         })}
