@@ -49,6 +49,7 @@ const News = () => {
               <a
                 className="rounded pl-1 pr-1 border-2 border-[#97c64b] font-semibold"
                 href={story.url}
+                target="_blank"
               >
                 Learn More
               </a>
