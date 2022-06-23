@@ -79,18 +79,18 @@ const Weather = ({ park }: parkProps) => {
   return (
     <div
       id="weather"
-      className="Weather col-start-1 row-start-1 grid justify-items-center w-full lg:max-w-[640px] min-w-[320px] lg:h-[42vh] border border-black rounded bg-white"
+      className="Weather col-start-1 row-start-1 grid justify-items-center w-full lg:max-w-[640px] min-w-[320px] max-h-[450px] lg:h-full border border-black rounded bg-white"
     >
       <h1 className="WeatherTitle justify-self-stretch h-[33px] text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Current Weather
       </h1>
-      <div className="Current w-full max-w-[640px] p-2 grid gap-6 items-center justify-items-center">
-        <div className="CurrentTemp col-start-2 row-span-3 text-2xl xs:text-4xl xl:text-5xl xxl:text-6xl whitespace-nowrap">
+      <div className="Current w-full max-w-[640px] p-2 pb-0 grid gap-6 items-center justify-items-center">
+        <div className="CurrentTemp col-start-2 row-span-3 text-2xl xs:text-4xl xl:text-5xl whitespace-nowrap">
           {Math.round(weather.current.temp)} °F
         </div>
         {weather.current.weather[0].icon.length > 2 && (
           <img
-            className="CurrentImg w-16 xs:w-24 xl:w-28 xxl:w-36 h-auto col-start-1 row-start-1"
+            className="CurrentImg w-16 xs:w-24 xl:w-28 h-auto col-start-1 row-start-1"
             src={require(`../images/weather-icons/${weather.current.weather[0].icon}.png`)}
             alt=""
           ></img>
@@ -111,7 +111,7 @@ const Weather = ({ park }: parkProps) => {
       <h1 className="WeatherTitle pb-3 text-center text-xl font-bold">
         Forecast
       </h1>
-      <div className="w-full pl-1 pr-1 flex gap-1 xs:gap-2 text-[9px] xs:text-xs lg:text-[10px] xl:text-xs xxl:text-sm justify-between items-center">
+      <div className="w-full pl-1 pr-1 flex gap-1 xs:gap-2 text-[9px] xs:text-xs lg:text-[10px] xl:text-xs justify-between items-center">
         {weather.daily.slice(1).map((day) => {
           return (
             <div
@@ -120,7 +120,7 @@ const Weather = ({ park }: parkProps) => {
             >
               <div>{moment.unix(day.dt).format('dddd')}</div>
               <img
-                className="w-5 xs:w-8 xl:w-10 xxl:w-12 h-auto"
+                className="w-5 xs:w-8 h-auto"
                 src={require(`../images/weather-icons/${day.weather[0].icon}.png`)}
                 alt=""
               ></img>
