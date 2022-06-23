@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-type CampingParams = { parkCode: string };
+type ParkCode = { parkCode: string };
 
 const Camping = ({}) => {
-  let { parkCode } = useParams<CampingParams>();
+  let { parkCode } = useParams<ParkCode>();
   const [campingInfo, setCampingInfo] = useState<any[]>([]);
 
   useEffect(() => {

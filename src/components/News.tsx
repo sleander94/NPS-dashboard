@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 
-type NewsParams = { parkCode: string };
+type ParkCode = { parkCode: string };
 
 const News = () => {
-  let { parkCode } = useParams<NewsParams>();
+  let { parkCode } = useParams<ParkCode>();
   const [news, setNews] = useState<any[]>([]);
 
   useEffect(() => {
