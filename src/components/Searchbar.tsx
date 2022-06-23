@@ -5,6 +5,14 @@ type ParksInfo = {
   parksInfo: Array<any>;
 };
 
+export const hideSearch = () => {
+  const suggs = document.getElementById('searchSuggs');
+  if (suggs !== null) {
+    suggs.classList.add('hidden');
+    suggs.classList.remove('visible');
+  }
+};
+
 const Searchbar = ({ parksInfo }: ParksInfo) => {
   const [searchVal, setSearchVal] = useState('');
   const [searchCode, setSearchCode] = useState('');
