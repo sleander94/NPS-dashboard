@@ -37,8 +37,8 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
     });
   };
 
-  const updateSearchAndHide = (name: string) => {
-    setSearchVal(name);
+  const clearSearchAndHide = (name: string) => {
+    setSearchVal('');
     hideSearch();
   };
 
@@ -63,7 +63,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
       </div>
       <div
         id="searchSuggs"
-        className="SearchSuggestions absolute top-[38px] z-10 w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
+        className="SearchSuggestions absolute top-[38px] z-20 w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
       >
         {parksInfo
           .filter((park) => {
@@ -82,7 +82,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
               <Link
                 className="Suggestion border border-black border-t-0 p-1 hover:bg-[#97c64b]"
                 to={`/parks/${park.parkCode}`}
-                onClick={() => updateSearchAndHide(park.name)}
+                onClick={() => clearSearchAndHide(park.name)}
                 key={parksInfo.indexOf(park)}
               >
                 {park.name}
