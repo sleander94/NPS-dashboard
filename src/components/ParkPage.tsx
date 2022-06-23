@@ -74,15 +74,15 @@ const ParkPage = ({ parksInfo }: ParksInfo) => {
       </div>
       <ParkNav park={park} />
       <div
-        className="lg:max-h-[calc(100vh-12px)] lg:grid lg:grid-cols-3 lg:justify-items-center w-full gap-2 flex flex-wrap justify-center bg-neutral-200/75 p-2"
+        className="lg:grid lg:grid-cols-3 lg:justify-items-center lg:items-start lg:max-h-[calc(100vh-156px)] w-[100%] gap-2 flex flex-wrap justify-center bg-neutral-200/75 p-2"
         onClick={() => hideSearch()}
       >
         <GeneralInformation park={park} />
-        <div className="lg:col-start-1 lg:row-start-1 flex flex-col gap-2 w-full lg:max-h-[calc(100vh-56px)]">
+        <div className="lg:col-start-1 lg:row-start-1 flex flex-col gap-2 w-full lg:h-[calc(100vh-156px)]">
           <Weather park={park} />
           <Alerts />
         </div>
-        <div className="lg:col-start-3 lg:row-start-1 flex flex-col gap-2 w-full lg:max-h-[calc(100vh-56px)]">
+        <div className="lg:col-start-3 lg:row-start-1 flex flex-col gap-2 w-full lg:h-[calc(100vh-156px)]">
           <News />
           <Camping />
         </div>
