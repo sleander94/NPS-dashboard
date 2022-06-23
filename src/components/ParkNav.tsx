@@ -4,7 +4,7 @@ import { hideSearch } from './Searchbar';
 const ParkNav = ({ park }: ParkProp) => {
   return (
     <div
-      className="ParkNav mt-3 w-full h-[84px] lg:h-[46px] text-center sticky top-0 bg-white border-b sm:border-b-0 border-black"
+      className="ParkNav z-10 mt-3 w-full h-[84px] lg:h-[46px] text-center sticky top-0 bg-white border-b sm:border-b-0 border-black"
       onClick={() => hideSearch()}
     >
       <a
