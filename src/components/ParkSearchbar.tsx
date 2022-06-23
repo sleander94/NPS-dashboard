@@ -49,7 +49,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
           type="text"
           className="SearchInput w-full p-1 border-r border-black rounded rounded-tr-none rounded-br-none rounded-bl-[.19rem] rounded-tl-[.19rem] focus:outline-none"
           value={searchVal}
-          placeholder="Search for another park"
+          placeholder="Find another park"
           onChange={(e) => setSearchVal(e.target.value)}
           onClick={() => showSearch()}
         ></input>
