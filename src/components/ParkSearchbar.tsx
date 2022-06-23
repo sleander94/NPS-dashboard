@@ -70,7 +70,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
       </div>
       <div
         id="searchSuggs"
-        className="SearchSuggestions border border-t-0 border-black absolute top-[38px] z-10 w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
+        className="SearchSuggestions absolute top-[38px] z-10 w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
       >
         {parksInfo
           .filter((park) => {
@@ -87,7 +87,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
           .map((park) => {
             return (
               <Link
-                className="Suggestion p-1 hover:bg-[#97c64b]"
+                className="Suggestion border border-black border-t-0 p-1 hover:bg-[#97c64b]"
                 to={`/parks/${park.parkCode}`}
                 onClick={() => updateSearchAndHide(park.name)}
                 key={parksInfo.indexOf(park)}
