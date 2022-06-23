@@ -1,18 +1,6 @@
-type parkProps = {
-  park: {
-    fullName?: string;
-    states?: string;
-    url?: string;
-    directionsUrl?: string;
-    latitude?: number;
-    longitude?: number;
-    description?: string;
-    weatherInfo?: string;
-    images?: [{ url: string; altText: string }];
-  };
-};
+import { ParkProp } from './ParkPage';
 
-const GeneralInformation = ({ park }: parkProps) => {
+const GeneralInformation = ({ park }: ParkProp) => {
   return (
     <div className="GeneralInfo lg:max-w-[640px] grid w-full col-start-2 row-span-2 border border-black rounded bg-white">
       {park.images && (

@@ -8,7 +8,7 @@ import Alerts from './Alerts';
 import News from './News';
 import Camping from './Campgrounds';
 
-type ParkPageParams = { parkCode: string };
+type ParkInfo = { parkCode: string };
 
 type ParksInfo = {
   parksInfo: Array<any>;
@@ -18,10 +18,30 @@ type Park = {
   fullName?: string;
   states?: string;
   url?: string;
+  directionsUrl?: string;
+  latitude?: number;
+  longitude?: number;
+  description?: string;
+  weatherInfo?: string;
+  images?: [{ url: string; altText: string }];
+};
+
+export type ParkProp = {
+  park: {
+    fullName?: string;
+    states?: string;
+    url?: string;
+    directionsUrl?: string;
+    latitude?: number;
+    longitude?: number;
+    description?: string;
+    weatherInfo?: string;
+    images?: [{ url: string; altText: string }];
+  };
 };
 
 const ParkPage = ({ parksInfo }: ParksInfo) => {
-  let { parkCode } = useParams<ParkPageParams>();
+  let { parkCode } = useParams<ParkInfo>();
   const [park, setPark] = useState<Park>({});
 
   useEffect(() => {

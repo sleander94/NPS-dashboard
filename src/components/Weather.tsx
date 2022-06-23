@@ -1,17 +1,8 @@
 import { useState, useEffect } from 'react';
+import { ParkProp } from './ParkPage';
 import moment from 'moment';
 
-type parkProps = {
-  park: {
-    fullName?: string;
-    states?: string;
-    url?: string;
-    latitude?: number;
-    longitude?: number;
-  };
-};
-
-const Weather = ({ park }: parkProps) => {
+const Weather = ({ park }: ParkProp) => {
   const [weather, setWeather] = useState<{
     current: {
       temp: number;
