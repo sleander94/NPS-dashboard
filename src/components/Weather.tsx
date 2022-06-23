@@ -2,24 +2,26 @@ import { useState, useEffect } from 'react';
 import { ParkProp } from './ParkPage';
 import moment from 'moment';
 
+type Weather = {
+  current: {
+    temp: number;
+    humidity: number;
+    uvi: number;
+    wind_speed: number;
+    sunrise: number;
+    weather: [{ description: string; icon: string }];
+  };
+  daily: [
+    {
+      dt: number;
+      temp: { min: number; max: number };
+      weather: [{ main: string; icon: string }];
+    }
+  ];
+};
+
 const Weather = ({ park }: ParkProp) => {
-  const [weather, setWeather] = useState<{
-    current: {
-      temp: number;
-      humidity: number;
-      uvi: number;
-      wind_speed: number;
-      sunrise: number;
-      weather: [{ description: string; icon: string }];
-    };
-    daily: [
-      {
-        dt: number;
-        temp: { min: number; max: number };
-        weather: [{ main: string; icon: string }];
-      }
-    ];
-  }>({
+  const [weather, setWeather] = useState<Weather>({
     current: {
       temp: 0,
       humidity: 0,
