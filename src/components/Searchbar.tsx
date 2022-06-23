@@ -84,7 +84,7 @@ const Searchbar = ({ parksInfo }: ParksInfo) => {
           .map((park) => {
             return (
               <Link
-                className="Suggestion p-1 hover:bg-lime-500"
+                className="Suggestion border border-black border-t-0 p-1 hover:bg-lime-500"
                 to={`/parks/${park.parkCode}`}
                 key={parksInfo.indexOf(park)}
               >
