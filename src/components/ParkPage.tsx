@@ -10,17 +10,19 @@ import Camping from './Campgrounds';
 
 type ParkPageParams = { parkCode: string };
 
-type parksInfoProp = {
+type ParksInfo = {
   parksInfo: Array<any>;
 };
 
-const ParkPage = ({ parksInfo }: parksInfoProp) => {
+type Park = {
+  fullName?: string;
+  states?: string;
+  url?: string;
+};
+
+const ParkPage = ({ parksInfo }: ParksInfo) => {
   let { parkCode } = useParams<ParkPageParams>();
-  const [park, setPark] = useState<{
-    fullName?: string;
-    states?: string;
-    url?: string;
-  }>({});
+  const [park, setPark] = useState<Park>({});
 
   useEffect(() => {
     const getPark = async () => {
