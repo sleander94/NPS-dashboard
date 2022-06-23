@@ -78,10 +78,14 @@ const ParkPage = ({ parksInfo }: ParksInfo) => {
         onClick={() => hideSearch()}
       >
         <GeneralInformation park={park} />
-        <Weather park={park} />
-        <Alerts />
-        <News />
-        <Camping />
+        <div className="lg:col-start-1 lg:row-start-1 flex flex-col gap-2 w-full lg:max-h-[calc(100vh-56px)]">
+          <Weather park={park} />
+          <Alerts />
+        </div>
+        <div className="lg:col-start-3 lg:row-start-1 flex flex-col gap-2 w-full lg:max-h-[calc(100vh-56px)]">
+          <News />
+          <Camping />
+        </div>
       </div>
     </div>
   );
