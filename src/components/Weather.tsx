@@ -72,7 +72,7 @@ const Weather = ({ park }: ParkProp) => {
   return (
     <div
       id="weather"
-      className="Weather col-start-1 row-start-1 grid justify-items-center w-full lg:max-w-[640px] min-w-[320px] max-h-[450px] lg:h-full border border-black rounded bg-white"
+      className="Weather grid justify-items-center w-full lg:max-w-[640px] min-w-[320px] max-h-[400px] lg:min-h-[50%] border border-black rounded bg-white"
     >
       <h1 className="WeatherTitle justify-self-stretch h-[33px] text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Current Weather
