@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { hideSearch } from './Searchbar';
 
 type SearchbarProps = {
   parksInfo: Array<any>;
@@ -34,14 +35,6 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
         navigate(`/parks/${searchCode}`);
       }
     });
-  };
-
-  const hideSearch = () => {
-    const suggs = document.getElementById('searchSuggs');
-    if (suggs !== null) {
-      suggs.classList.add('hidden');
-      suggs.classList.remove('visible');
-    }
   };
 
   const updateSearchAndHide = (name: string) => {

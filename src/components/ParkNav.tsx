@@ -1,12 +1,5 @@
 import { ParkProp } from './ParkPage';
-
-const hideSearch = () => {
-  const suggs = document.getElementById('searchSuggs');
-  if (suggs !== null) {
-    suggs.classList.add('hidden');
-    suggs.classList.remove('visible');
-  }
-};
+import { hideSearch } from './Searchbar';
 
 const ParkNav = ({ park }: ParkProp) => {
   return (

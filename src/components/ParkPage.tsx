@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { hideSearch } from './Searchbar';
 import ParkPageSearchbar from './ParkSearchbar';
 import ParkNav from './ParkNav';
 import Weather from './Weather';
@@ -58,14 +59,6 @@ const ParkPage = ({ parksInfo }: ParksInfo) => {
     };
     getPark();
   }, [parkCode]);
-
-  const hideSearch = () => {
-    const suggs = document.getElementById('searchSuggs');
-    if (suggs !== null) {
-      suggs.classList.add('hidden');
-      suggs.classList.remove('visible');
-    }
-  };
 
   return (
     <div className="grid">

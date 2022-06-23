@@ -1,18 +1,10 @@
-import Searchbar from './Searchbar';
+import Searchbar, { hideSearch } from './Searchbar';
 
 type ParksInfo = {
   parksInfo: Array<any>;
 };
 
 const HomePage = ({ parksInfo }: ParksInfo) => {
-  const hideSearch = () => {
-    const suggs = document.getElementById('searchSuggs');
-    if (suggs !== null) {
-      suggs.classList.add('hidden');
-      suggs.classList.remove('visible');
-    }
-  };
-
   return (
     <div className="h-[calc(100vh-72px)] grid grid-auto-rows items-start">
       <div
