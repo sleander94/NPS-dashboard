@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 type ParkCode = { parkCode: string };
 
-const Camping = ({}) => {
+const Camping = () => {
   let { parkCode } = useParams<ParkCode>();
   const [campingInfo, setCampingInfo] = useState<any[]>([]);
 

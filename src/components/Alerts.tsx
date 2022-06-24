@@ -4,7 +4,7 @@ import moment from 'moment';
 
 type ParkCode = { parkCode: string };
 
-const Alerts = ({}) => {
+const Alerts = () => {
   let { parkCode } = useParams<ParkCode>();
   const [alerts, setAlerts] = useState<any[]>([]);
 
