@@ -16,6 +16,8 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
         setSearchCode(park.parkCode);
       }
     });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchVal]);
 
   const showSearch = () => {
@@ -67,9 +69,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
       >
         {parksInfo
           .filter((park) => {
-            if (searchVal === '') {
-              return;
-            } else if (
+            if (
               park.name
                 .toLocaleLowerCase()
                 .includes(searchVal.toLocaleLowerCase())
