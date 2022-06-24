@@ -80,7 +80,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
           .map((park) => {
             return (
               <Link
-                className="Suggestion border border-black border-t-0 p-1 hover:bg-[#97c64b]"
+                className="Suggestion border border-black border-t-0 p-1 hover:text-white hover:bg-[#3A736C]"
                 to={`/parks/${park.parkCode}`}
                 onClick={() => clearSearchAndHide(park.name)}
                 key={parksInfo.indexOf(park)}
