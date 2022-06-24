@@ -57,6 +57,7 @@ const Camping = () => {
                   className="rounded p-1 border-2 bg-[#3A736C] text-white"
                   href={campground.reservationUrl}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Reservation Information
                 </a>
@@ -66,6 +67,7 @@ const Camping = () => {
                   className="rounded p-1 border-2 bg-[#3A736C] text-white"
                   href={campground.url}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Reservation Information
                 </a>

@@ -54,6 +54,7 @@ const News = () => {
                 className="rounded p-1 border-2 bg-[#3A736C] text-white"
                 href={story.url}
                 target="_blank"
+                rel="noreferrer"
               >
                 Learn More
               </a>

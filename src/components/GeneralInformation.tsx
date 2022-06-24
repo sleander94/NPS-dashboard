@@ -16,6 +16,7 @@ const GeneralInformation = ({ park }: ParkProp) => {
           className="rounded p-1 border-2 bg-[#3A736C] text-white"
           href={park.url}
           target="_blank"
+          rel="noreferrer"
         >
           NPS Website
         </a>
@@ -23,6 +24,7 @@ const GeneralInformation = ({ park }: ParkProp) => {
           className="rounded p-1 border-2 bg-[#3A736C] text-white"
           href={park.directionsUrl}
           target="_blank"
+          rel="noreferrer"
         >
           Directions
         </a>
