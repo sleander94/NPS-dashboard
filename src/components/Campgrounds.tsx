@@ -43,7 +43,10 @@ const Camping = ({}) => {
             >
               <h2 className="text-lg font-semibold">{campground.name}</h2>
               {campground.images.length > 0 && (
-                <img src={campground.images[0].url}></img>
+                <img
+                  className="block ml-auto mr-auto w-full"
+                  src={campground.images[0].url}
+                ></img>
               )}
               <p className="pb-2">{campground.description}</p>
               <h3 className="font-semibold">Directions</h3>

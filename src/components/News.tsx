@@ -44,7 +44,11 @@ const News = () => {
               <p className="italic text-sm">
                 {moment(story.lastIndexedDate).format('MMM Do YY')}
               </p>
-              <img src={story.image.url} alt={story.image.altText}></img>
+              <img
+                className="block ml-auto mr-auto w-full"
+                src={story.image.url}
+                alt={story.image.altText}
+              ></img>
               <p className="mb-1">{story.abstract}</p>
               <a
                 className="rounded p-1 border-2 bg-[#3A736C] text-white"
