@@ -23,6 +23,8 @@ const Searchbar = ({ parksInfo }: ParksInfo) => {
         setSearchCode(park.parkCode);
       }
     });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchVal]);
 
   const showSearch = () => {
