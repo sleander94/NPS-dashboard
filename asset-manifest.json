@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sleander94/park-at-a-glance/static/css/main.34df95bc.css",
-    "main.js": "/sleander94/park-at-a-glance/static/js/main.69189aec.js",
-    "static/media/smoky-mountains.jpg": "/sleander94/park-at-a-glance/static/media/smoky-mountains.7b7665aac9bc35278846.jpg",
-    "static/media/mountain-svgrepo-com.svg": "/sleander94/park-at-a-glance/static/media/mountain-svgrepo-com.b599d9309a7a8d42f13798a4ffca9157.svg",
-    "index.html": "/sleander94/park-at-a-glance/index.html",
-    "main.34df95bc.css.map": "/sleander94/park-at-a-glance/static/css/main.34df95bc.css.map",
-    "main.69189aec.js.map": "/sleander94/park-at-a-glance/static/js/main.69189aec.js.map"
+    "main.css": "/park-at-a-glance/static/css/main.81e21be8.css",
+    "main.js": "/park-at-a-glance/static/js/main.9be9b2d7.js",
+    "static/media/smoky-mountains.jpg": "/park-at-a-glance/static/media/smoky-mountains.7b7665aac9bc35278846.jpg",
+    "static/media/mountain-svgrepo-com.svg": "/park-at-a-glance/static/media/mountain-svgrepo-com.b599d9309a7a8d42f13798a4ffca9157.svg",
+    "index.html": "/park-at-a-glance/index.html",
+    "main.81e21be8.css.map": "/park-at-a-glance/static/css/main.81e21be8.css.map",
+    "main.9be9b2d7.js.map": "/park-at-a-glance/static/js/main.9be9b2d7.js.map"
   },
   "entrypoints": [
-    "static/css/main.34df95bc.css",
-    "static/js/main.69189aec.js"
+    "static/css/main.81e21be8.css",
+    "static/js/main.9be9b2d7.js"
   ]
 }
