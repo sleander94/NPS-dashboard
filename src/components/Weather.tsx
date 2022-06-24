@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ParkProp } from './ParkPage';
 import moment from 'moment';
 
-type Weather = {
+type WeatherInfo = {
   current: {
     temp: number;
     humidity: number;
@@ -21,7 +21,7 @@ type Weather = {
 };
 
 const Weather = ({ park }: ParkProp) => {
-  const [weather, setWeather] = useState<Weather>({
+  const [weather, setWeather] = useState<WeatherInfo>({
     current: {
       temp: 0,
       humidity: 0,
