@@ -62,8 +62,10 @@ const ParkPage = ({ parksInfo }: ParksInfo) => {
 
   return (
     <div className="grid">
-      <div className="justify-self-center w-full lg:w-2/3 max-w-[800px]">
+      <div className="pl-1 pr-1 lg:p-0 flex w-full justify-center">
+        <div className="lg:w-1/3" onClick={() => hideSearch()}></div>
         <ParkPageSearchbar parksInfo={parksInfo} />
+        <div className="lg:w-1/3" onClick={() => hideSearch()}></div>
       </div>
       <ParkNav park={park} />
       <div

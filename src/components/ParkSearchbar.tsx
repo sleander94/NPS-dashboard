@@ -45,7 +45,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
   };
 
   return (
-    <form className="Searchbar relative grid justify-items-center items-center">
+    <form className="Searchbar w-full lg:w-2/3 max-w-[800px] relative grid justify-items-center items-center">
       <div className="SearchBox w-full grid rounded border-black border">
         <input
           type="text"
