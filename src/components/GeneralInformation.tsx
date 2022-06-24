@@ -13,7 +13,7 @@ const GeneralInformation = ({ park }: ParkProp) => {
       <p className="p-1">{park.description}</p>
       <div className="p-2 pb-4 flex justify-around items-center">
         <a
-          className="rounded p-1 border-2 bg-[#3A736C] text-white"
+          className="rounded p-1 bg-[#3A736C] text-white"
           href={park.url}
           target="_blank"
           rel="noreferrer"
@@ -21,7 +21,7 @@ const GeneralInformation = ({ park }: ParkProp) => {
           NPS Website
         </a>
         <a
-          className="rounded p-1 border-2 bg-[#3A736C] text-white"
+          className="rounded p-1 bg-[#3A736C] text-white"
           href={park.directionsUrl}
           target="_blank"
           rel="noreferrer"

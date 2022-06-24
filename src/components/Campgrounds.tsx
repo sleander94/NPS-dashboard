@@ -54,7 +54,7 @@ const Camping = () => {
               <p className="mb-1">{campground.directionsOverview}</p>
               {campground.reservationUrl && (
                 <a
-                  className="rounded p-1 border-2 bg-[#3A736C] text-white"
+                  className="rounded p-1 bg-[#3A736C] text-white"
                   href={campground.reservationUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -64,7 +64,7 @@ const Camping = () => {
               )}
               {!campground.reservationUrl && (
                 <a
-                  className="rounded p-1 border-2 bg-[#3A736C] text-white"
+                  className="rounded p-1 bg-[#3A736C] text-white"
                   href={campground.url}
                   target="_blank"
                   rel="noreferrer"

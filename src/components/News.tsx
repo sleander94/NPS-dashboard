@@ -51,7 +51,7 @@ const News = () => {
               ></img>
               <p className="mb-1">{story.abstract}</p>
               <a
-                className="rounded p-1 border-2 bg-[#3A736C] text-white"
+                className="rounded p-1 bg-[#3A736C] text-white"
                 href={story.url}
                 target="_blank"
                 rel="noreferrer"
