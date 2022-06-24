@@ -75,6 +75,8 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
                 .includes(searchVal.toLocaleLowerCase())
             ) {
               return park;
+            } else {
+              return false;
             }
           })
           .map((park) => {
