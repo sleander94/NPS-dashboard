@@ -27,7 +27,7 @@ const Alerts = ({}) => {
       id="alerts"
       className="Alerts w-full lg:min-h-[50%] lg:overflow-y-scroll lg:max-w-[640px] border border-black border-b-0 lg:border-b rounded bg-white"
     >
-      <h1 className="lg:sticky lg:top-0 text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
+      <h1 className="lg:sticky lg:top-0 text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Alerts
       </h1>
       {alerts.length === 0 && (

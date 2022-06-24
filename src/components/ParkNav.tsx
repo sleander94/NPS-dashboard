@@ -9,7 +9,7 @@ const ParkNav = ({ park }: ParkProp) => {
     >
       <a
         href="#info"
-        className=" block text-xl p-2 font-bold bg-[#97c64b] border-b border-t border-black"
+        className=" block text-xl p-2 font-bold bg-[#3A736C] text-white border-b border-t border-black"
       >
         {park.fullName}
       </a>

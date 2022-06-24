@@ -74,7 +74,7 @@ const Weather = ({ park }: ParkProp) => {
       id="weather"
       className="Weather grid justify-items-center w-full lg:max-w-[640px] min-w-[320px] max-h-[400px] lg:min-h-[50%] border border-black rounded bg-white"
     >
-      <h1 className="WeatherTitle justify-self-stretch h-[33px] text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
+      <h1 className="WeatherTitle justify-self-stretch h-[33px] text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Current Weather
       </h1>
       <div className="Current w-full max-w-[640px] p-2 pb-0 grid gap-6 items-center justify-items-center">

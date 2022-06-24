@@ -27,7 +27,7 @@ const News = () => {
       id="news"
       className="relative lg:col-start-3 lg:row-start-1 lg:min-h-[50%]  lg:overflow-y-scroll w-full lg:max-w-[640px] border border-black border-b-0 lg:border-b rounded bg-white rounded"
     >
-      <h1 className="lg:sticky lg:top-0 text-center text-2xl font-bold bg-[#97c64b] rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
+      <h1 className="lg:sticky lg:top-0 text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         News
       </h1>
       {news.length === 0 && (
@@ -45,9 +45,9 @@ const News = () => {
                 {moment(story.lastIndexedDate).format('MMM Do YY')}
               </p>
               <img src={story.image.url} alt={story.image.altText}></img>
-              <p>{story.abstract}</p>
+              <p className="mb-1">{story.abstract}</p>
               <a
-                className="rounded pl-1 pr-1 border-2 border-[#97c64b] font-semibold"
+                className="rounded p-1 border-2 bg-[#3A736C] text-white"
                 href={story.url}
                 target="_blank"
               >
