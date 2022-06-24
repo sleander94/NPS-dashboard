@@ -69,13 +69,11 @@ const Searchbar = ({ parksInfo }: ParksInfo) => {
       </div>
       <div
         id="searchSuggs"
-        className="SearchSuggestions w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid"
+        className="SearchSuggestions w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
       >
         {parksInfo
           .filter((park) => {
-            if (searchVal === '') {
-              return;
-            } else if (
+            if (
               park.name
                 .toLocaleLowerCase()
                 .includes(searchVal.toLocaleLowerCase())
