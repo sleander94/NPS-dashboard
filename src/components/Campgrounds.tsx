@@ -46,6 +46,7 @@ const Camping = () => {
                 <img
                   className="block ml-auto mr-auto w-full"
                   src={campground.images[0].url}
+                  alt={campground.images[0].altText}
                 ></img>
               )}
               <p className="pb-2">{campground.description}</p>
