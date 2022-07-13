@@ -67,7 +67,7 @@ const ParkPageSearchbar = ({ parksInfo }: SearchbarProps) => {
         id="searchSuggs"
         className="SearchSuggestions absolute top-[38px] z-20 w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
       >
-        {parksInfo
+        {searchVal !== '' && parksInfo
           .filter((park) => {
             if (
               park.name
