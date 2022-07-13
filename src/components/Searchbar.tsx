@@ -69,7 +69,7 @@ const Searchbar = ({ parksInfo }: ParksInfo) => {
       </div>
       <div
         id="searchSuggs"
-        className="SearchSuggestions w-full max-h-[60vh] overflow-y-scroll rounded justify-self-center bg-white grid hidden"
+        className="SearchSuggestions w-full max-h-[60vh] overflow-y-scroll justify-self-center bg-white grid hidden"
       >
         {searchVal !== '' && parksInfo
           .filter((park) => {
