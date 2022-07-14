@@ -70,7 +70,7 @@ const Weather = ({ park }: ParkProp) => {
   };
 
   return (
-    <div
+    <section
       id="weather"
       className="Weather overflow-scroll grid justify-items-center w-full lg:max-w-[640px] min-w-[320px] max-h-[400px] lg:min-h-[50%] border border-black rounded bg-white"
     >
@@ -123,7 +123,7 @@ const Weather = ({ park }: ParkProp) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 export default Weather;

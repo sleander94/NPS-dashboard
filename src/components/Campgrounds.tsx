@@ -22,7 +22,7 @@ const Camping = () => {
     getCampingInfo();
   }, [parkCode]);
   return (
-    <div
+    <section
       id="campgrounds"
       className="Camping lg:max-w-[640px] lg:col-start-3 lg:min-h-[50%]  lg:overflow-y-scroll w-full border border-black border-b-0 lg:border-b rounded bg-white"
     >
@@ -76,7 +76,7 @@ const Camping = () => {
             </div>
           );
         })}
-    </div>
+    </section>
   );
 };
 

@@ -23,7 +23,7 @@ const News = () => {
     getNews();
   }, [parkCode]);
   return (
-    <div
+    <section
       id="news"
       className="relative lg:col-start-3 lg:row-start-1 lg:min-h-[50%]  lg:overflow-y-scroll w-full lg:max-w-[640px] border border-black border-b-0 lg:border-b rounded bg-white rounded"
     >
@@ -62,7 +62,7 @@ const News = () => {
             </div>
           );
         })}
-    </div>
+    </section>
   );
 };
 

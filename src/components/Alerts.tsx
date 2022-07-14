@@ -23,7 +23,7 @@ const Alerts = () => {
     getAlerts();
   }, [parkCode]);
   return (
-    <div
+    <section
       id="alerts"
       className="Alerts w-full lg:min-h-[50%] lg:overflow-y-scroll lg:max-w-[640px] border border-black border-b-0 lg:border-b rounded bg-white"
     >
@@ -49,7 +49,7 @@ const Alerts = () => {
             </div>
           );
         })}
-    </div>
+    </section>
   );
 };
 
