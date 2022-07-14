@@ -2,10 +2,10 @@ import { ParkProp } from './ParkPage';
 
 const GeneralInformation = ({ park }: ParkProp) => {
   return (
-    <section id="info" className="GeneralInfo lg:max-w-[640px] lg:h-full overflow-y-scroll w-full col-start-2 border border-black rounded bg-white">
+    <section id="info" className="GeneralInfo lg:max-w-[900px] w-full border border-black rounded bg-white">
       {park.images && (
         <img
-          className="block ml-auto mr-auto w-full lg:max-h-[50%] lg:w-auto lg:max-w-full rounded-tr-[.19rem] rounded-tl-[.19rem]"
+          className="block ml-auto mr-auto w-full rounded-tr-[.19rem] rounded-tl-[.19rem]"
           src={park.images[0].url}
           alt={park.images[0].altText}
         ></img>

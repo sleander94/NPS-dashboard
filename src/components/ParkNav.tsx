@@ -33,7 +33,7 @@ const ParkNav = ({ park }: ParkProp) => {
       >
         {park.fullName}
       </a>
-      <div className="LinkContainer w-full lg:hidden p-2 border-black border-b flex justify-between items-center bg-white">
+      <div className="LinkContainer w-full p-2 border-black border-b flex justify-between lg:justify-around items-center bg-white">
         <a href="#weather">Weather</a>
         <a href="#alerts">Alerts</a>
         <a href="#news">News</a>

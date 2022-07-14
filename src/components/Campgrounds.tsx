@@ -24,9 +24,9 @@ const Camping = () => {
   return (
     <section
       id="campgrounds"
-      className="Camping lg:max-w-[640px] lg:col-start-3 lg:min-h-[50%]  lg:overflow-y-scroll w-full border border-black border-b-0 lg:border-b rounded bg-white"
+      className="Camping lg:max-w-[900px] w-full border border-black border-b-0 rounded bg-white"
     >
-      <h1 className="lg:sticky lg:top-0 text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
+      <h1 className="text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Campgrounds
       </h1>
       {campingInfo.length === 0 && (
@@ -38,7 +38,7 @@ const Camping = () => {
         campingInfo.map((campground) => {
           return (
             <div
-              className="lg:border-none p-1 border-b border-black"
+              className="p-1 border-b border-black"
               key={campingInfo.indexOf(campground)}
             >
               <h2 className="text-lg font-semibold">{campground.name}</h2>
@@ -72,7 +72,6 @@ const Camping = () => {
                   Reservation Information
                 </a>
               )}
-              <div className="lg:border-b lg:border-gray-400 lg:pt-2"></div>
             </div>
           );
         })}

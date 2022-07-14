@@ -25,9 +25,9 @@ const Alerts = () => {
   return (
     <section
       id="alerts"
-      className="Alerts w-full lg:min-h-[50%] lg:overflow-y-scroll lg:max-w-[640px] border border-black border-b-0 lg:border-b rounded bg-white"
+      className="Alerts w-full lg:max-w-[900px] border border-black border-b-0 rounded bg-white"
     >
-      <h1 className="lg:sticky lg:top-0 text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
+      <h1 className="text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         Alerts
       </h1>
       {alerts.length === 0 && (
@@ -37,7 +37,7 @@ const Alerts = () => {
         alerts.map((alert) => {
           return (
             <div
-              className="lg:border-none p-1 border-b border-black"
+              className="p-1 border-b border-black"
               key={alerts.indexOf(alert)}
             >
               <p className="text-lg font-semibold">{alert.title}</p>
@@ -45,7 +45,6 @@ const Alerts = () => {
                 {moment(alert.lastIndexedDate).format('MMM Do YY')}
               </p>
               <p>{alert.description}</p>
-              <div className="lg:border-b lg:border-gray-400 lg:pt-2"></div>
             </div>
           );
         })}

@@ -25,9 +25,9 @@ const News = () => {
   return (
     <section
       id="news"
-      className="relative lg:col-start-3 lg:row-start-1 lg:min-h-[50%]  lg:overflow-y-scroll w-full lg:max-w-[640px] border border-black border-b-0 lg:border-b rounded bg-white rounded"
+      className="w-full lg:max-w-[900px] border border-black border-b-0 rounded bg-white rounded"
     >
-      <h1 className="lg:sticky lg:top-0 text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
+      <h1 className="text-center text-2xl font-bold bg-[#3A736C] text-white rounded-tr-[.19rem] rounded-tl-[.19rem] border-b border-black">
         News
       </h1>
       {news.length === 0 && (
@@ -37,7 +37,7 @@ const News = () => {
         news.map((story) => {
           return (
             <div
-              className="lg:border-none p-1 border-b border-black"
+              className="p-1 border-b border-black"
               key={news.indexOf(story)}
             >
               <p className="text-lg font-semibold">{story.title}</p>
@@ -58,7 +58,6 @@ const News = () => {
               >
                 Learn More
               </a>
-              <div className="lg:border-b lg:border-gray-400 lg:pt-2"></div>
             </div>
           );
         })}
