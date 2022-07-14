@@ -6,3 +6,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
+
+.active {
+  color: #3A736C;
+  font-weight: 700;
+}
