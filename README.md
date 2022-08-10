@@ -1,8 +1,6 @@
 # Park At A Glance
 
-Get up-to-date ⛅ weather, ⛔ alerts, 📰 news, and 🏕️ camping information for any of America's National Parks. 🌲
-
-[Live site](https://www.parkataglance.com/) 👈
+## Live Site:  [parkataglance.com](https://www.parkataglance.com/) 
 
 <p align="left" width="100%">
     <img width="60%" src="/public/images/parkataglancedesktop.png" alt="desktop preview">
@@ -11,6 +9,8 @@ Get up-to-date ⛅ weather, ⛔ alerts, 📰 news, and 🏕️ camping informati
 <p align="left" width="100%">
     <img width="60%" src="https://media.giphy.com/media/VkB3wroOw5RRVfKirp/giphy.gif" alt="desktop demo gif">
 </p>
+
+Get up-to-date ⛅ weather, ⛔ alerts, 📰 news, and 🏕️ camping information for any of America's National Parks. 🌲
 
 ## Features
 
